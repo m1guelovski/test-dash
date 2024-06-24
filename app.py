@@ -25,9 +25,6 @@ def update_graph(value):
     return fig
 
 if __name__ == "__main__":
-    if os.name == 'nt':  # Check if the OS is Windows
-        app.run_server(debug=True, host="127.0.0.1", port=8050)
-    else:
-        port = int(os.environ.get("PORT", 8050))
-        app.run_server(debug=False, host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 8000))  # Use a porta definida na variável de ambiente PORT ou padrão 8000
+    app.run_server(debug=False, host="0.0.0.0", port=port)
 
